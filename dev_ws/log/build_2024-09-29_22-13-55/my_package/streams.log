@@ -1,0 +1,48 @@
+[0.016s] Invoking command in '/home/hsm/ros2/dev_ws/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/hsm/ros2/dev_ws/src/my_package -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/hsm/ros2/dev_ws/install/my_package
+[0.222s] -- The C compiler identification is GNU 11.4.0
+[0.368s] -- The CXX compiler identification is GNU 11.4.0
+[0.385s] -- Detecting C compiler ABI info
+[0.486s] -- Detecting C compiler ABI info - done
+[0.493s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.494s] -- Detecting C compile features
+[0.495s] -- Detecting C compile features - done
+[0.500s] -- Detecting CXX compiler ABI info
+[0.603s] -- Detecting CXX compiler ABI info - done
+[0.609s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.609s] -- Detecting CXX compile features
+[0.609s] -- Detecting CXX compile features - done
+[0.616s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.783s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.866s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.927s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.025s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.026s] -- Added test 'lint_cmake' to check CMake code style
+[1.027s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.029s] -- Added test 'xmllint' to check XML markup files
+[1.033s] -- Configuring done
+[1.037s] -- Generating done
+[1.039s] -- Build files have been written to: /home/hsm/ros2/dev_ws/build/my_package
+[1.046s] Invoked command in '/home/hsm/ros2/dev_ws/build/my_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/hsm/ros2/dev_ws/src/my_package -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/hsm/ros2/dev_ws/install/my_package
+[1.049s] Invoking command in '/home/hsm/ros2/dev_ws/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev_ws/build/my_package -- -j6 -l6
+[1.102s] Invoked command in '/home/hsm/ros2/dev_ws/build/my_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev_ws/build/my_package -- -j6 -l6
+[1.151s] Invoking command in '/home/hsm/ros2/dev_ws/build/my_package': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev_ws/build/my_package
+[1.161s] -- Install configuration: ""
+[1.161s] -- Execute custom install script
+[1.162s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/launch/listener.launch.py
+[1.174s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/launch/talker.launch.py
+[1.187s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/ament_index/resource_index/package_run_dependencies/my_package
+[1.199s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/ament_index/resource_index/parent_prefix_path/my_package
+[1.211s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/environment/ament_prefix_path.sh
+[1.223s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/environment/ament_prefix_path.dsv
+[1.236s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/environment/path.sh
+[1.249s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/environment/path.dsv
+[1.261s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/local_setup.bash
+[1.274s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/local_setup.sh
+[1.286s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/local_setup.zsh
+[1.297s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/local_setup.dsv
+[1.309s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/package.dsv
+[1.322s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/ament_index/resource_index/packages/my_package
+[1.334s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/cmake/my_packageConfig.cmake
+[1.346s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/cmake/my_packageConfig-version.cmake
+[1.358s] -- Symlinking: /home/hsm/ros2/dev_ws/install/my_package/share/my_package/package.xml
+[1.374s] Invoked command in '/home/hsm/ros2/dev_ws/build/my_package' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev_ws/build/my_package

@@ -1,0 +1,31 @@
+hsm@hsm-virtual-machine:~/ros2$ mkdir -p dev_ws/src
+hsm@hsm-virtual-machine:~/ros2$ ls
+dev_ws  launcher.py  setup.bash  setup.sh
+hsm@hsm-virtual-machine:~/ros2$ cd dev_ws/
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ colcon build --symlink-install
+                     
+Summary: 0 packages finished [0.53s]
+
+hsm@hsm-virtual-machine:~/ros2/dev_ws/src$ ros2 pkg create --build-type ament_cmake my_package
+going to create a new package
+package name: my_package
+destination directory: /home/hsm/ros2/dev_ws/src
+package format: 3
+version: 0.0.0
+description: TODO: Package description
+maintainer: ['hsm <harmanmalht777@gmail.com>']
+licenses: ['TODO: License declaration']
+build type: ament_cmake
+dependencies: []
+creating folder ./my_package
+creating ./my_package/package.xml
+creating source and include folder
+creating folder ./my_package/src
+creating folder ./my_package/include/my_package
+creating ./my_package/CMakeLists.txt
+
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ colcon build --symlink-install
+Starting >>> my_package
+Finished <<< my_package [1.44s]                  
+
+Summary: 1 package finished [1.71s]
