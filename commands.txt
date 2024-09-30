@@ -29,3 +29,71 @@ Starting >>> my_package
 Finished <<< my_package [1.44s]                  
 
 Summary: 1 package finished [1.71s]
+
+hsm@hsm-virtual-machine:~/ros2$ ./setup.bash
+
+ros2 run tf2_ros static_transform_publisher x y z yaw pitch roll parent_frame child_frame
+eg- >>
+hsm@hsm-virtual-machine:~/ros2$ ros2 run tf2_ros static_transform_publisher 2 1 0 0.785 0 0 world robot_1
+[WARN] [1727629817.679551804] []: Old-style arguments are deprecated; see --help for new-style arguments
+[INFO] [1727629817.698358557] [static_transform_publisher_tm8SvLh1932Z2OoF]: Spinning until stopped - publishing transform
+translation: ('2.000000', '1.000000', '0.000000')
+rotation: ('0.000000', '0.000000', '0.382499', '0.923956')
+from 'world' to 'robot_1'
+
+hsm@hsm-virtual-machine:~/ros2$ ros2 run tf2_ros static_transform_publisher 1 0 0 0 0 0 robot_1 robot_2
+[WARN] [1727629937.182084017] []: Old-style arguments are deprecated; see --help for new-style arguments
+[INFO] [1727629937.199617102] [static_transform_publisher_5XFKUa8LmnytQBL9]: Spinning until stopped - publishing transform
+translation: ('1.000000', '0.000000', '0.000000')
+rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+from 'robot_1' to 'robot_2'
+
+hsm@hsm-virtual-machine:~/ros2$ ros2 run tf2_ros static_transform_publisher 1 0 0 0 0 0 world robot_2
+[WARN] [1727629905.362346097] []: Old-style arguments are deprecated; see --help for new-style arguments
+[INFO] [1727629905.390635411] [static_transform_publisher_h3PLMFL725VIGimc]: Spinning until stopped - publishing transform
+translation: ('1.000000', '0.000000', '0.000000')
+rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+from 'world' to 'robot_2'
+[INFO] [1727629928.381512099] [rclcpp]: signal_handler(signum=2)
+
+hsm@hsm-virtual-machine:~/ros2$ ros2 run tf2_ros static_transform_publisher 2 1 0 1.57 0 0 world robot_1
+[WARN] [1727630221.566977675] []: Old-style arguments are deprecated; see --help for new-style arguments
+[INFO] [1727630221.588910706] [static_transform_publisher_79II4Sqkjrq2ZjLW]: Spinning until stopped - publishing transform
+translation: ('2.000000', '1.000000', '0.000000')
+rotation: ('0.000000', '0.000000', '0.706825', '0.707388')
+from 'world' to 'robot_1'
+^C[INFO] [1727630262.779942116] [rclcpp]: signal_handler(signum=2)
+
+hsm@hsm-virtual-machine:~/ros2$ source /opt/ros/humble/setup.bash
+hsm@hsm-virtual-machine:~/ros2$ ros2 run rviz2 rviz2
+[INFO] [1727630090.099024407] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1727630090.099250642] [rviz2]: OpenGl version: 4.3 (GLSL 4.3)
+[INFO] [1727630090.163845742] [rviz2]: Stereo is NOT SUPPORTED
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 8453, resource id: 11640785, major code: 40 (TranslateCoords), minor code: 0
+
+hsm@hsm-virtual-machine:~/ros2$ ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:="$( xacro ~/example_robot.urdf.xacro )"
+[INFO] [1727716391.002824204] [robot_state_publisher]: got segment base
+[INFO] [1727716391.002959579] [robot_state_publisher]: got segment camera
+[INFO] [1727716391.003069477] [robot_state_publisher]: got segment grip
+[INFO] [1727716391.003110450] [robot_state_publisher]: got segment l1
+[INFO] [1727716391.003119350] [robot_state_publisher]: got segment l2
+[INFO] [1727716391.003124956] [robot_state_publisher]: got segment l3
+[INFO] [1727716391.003130051] [robot_state_publisher]: got segment world
+
+hsm@hsm-virtual-machine:~/ros2$ rviz2
+[INFO] [1727716502.322656738] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1727716502.322787741] [rviz2]: OpenGl version: 4.3 (GLSL 4.3)
+[INFO] [1727716502.356866212] [rviz2]: Stereo is NOT SUPPORTED
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 9782, resource id: 10723143, major code: 40 (TranslateCoords), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 42827, resource id: 10791784, major code: 40 (TranslateCoords), minor code: 0
+
+hsm@hsm-virtual-machine:~/ros2$ ros2 run joint_state_publisher_gui joint_state_publisher_gui
+[INFO] [1727716483.735783872] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
+[INFO] [1727716483.777367645] [joint_state_publisher]: Centering
+[INFO] [1727716484.408938265] [joint_state_publisher]: Centering
+
+hsm@hsm-virtual-machine:~$ ros2 run tf2_tools view_frames
+[INFO] [1727716856.889147783] [view_frames]: Listening to tf data for 5.0 seconds...
+[INFO] [1727716861.961634592] [view_frames]: Generating graph in frames.pdf file...
+[INFO] [1727716861.963761318] [view_frames]: Result:tf2_msgs.srv.FrameGraph_Response(frame_yaml="l3: \n  parent: 'base'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nbase: \n  parent: 'world'\n  broadcaster: 'default_authority'\n  rate: 10000.000\n  most_recent_transform: 0.000000\n  oldest_transform: 0.000000\n  buffer_length: 0.000\ngrip: \n  parent: 'l1'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nl1: \n  parent: 'l2'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nl2: \n  parent: 'l3'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\ncamera: \n  parent: 'world'\n  broadcaster: 'default_authority'\n  rate: 10000.000\n  most_recent_transform: 0.000000\n  oldest_transform: 0.000000\n  buffer_length: 0.000\n")
+
