@@ -1,0 +1,1 @@
+/home/hsm/ros2/dev/src/build/sample_robo/ament_cmake_core/sample_roboConfig.cmake

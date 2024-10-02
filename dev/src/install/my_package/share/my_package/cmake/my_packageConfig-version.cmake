@@ -1,0 +1,1 @@
+/home/hsm/ros2/dev/src/build/my_package/ament_cmake_core/my_packageConfig-version.cmake

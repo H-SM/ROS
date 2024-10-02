@@ -97,3 +97,104 @@ hsm@hsm-virtual-machine:~$ ros2 run tf2_tools view_frames
 [INFO] [1727716861.961634592] [view_frames]: Generating graph in frames.pdf file...
 [INFO] [1727716861.963761318] [view_frames]: Result:tf2_msgs.srv.FrameGraph_Response(frame_yaml="l3: \n  parent: 'base'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nbase: \n  parent: 'world'\n  broadcaster: 'default_authority'\n  rate: 10000.000\n  most_recent_transform: 0.000000\n  oldest_transform: 0.000000\n  buffer_length: 0.000\ngrip: \n  parent: 'l1'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nl1: \n  parent: 'l2'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\nl2: \n  parent: 'l3'\n  broadcaster: 'default_authority'\n  rate: 10.433\n  most_recent_transform: 1727716861.959648\n  oldest_transform: 1727716859.659218\n  buffer_length: 2.300\ncamera: \n  parent: 'world'\n  broadcaster: 'default_authority'\n  rate: 10000.000\n  most_recent_transform: 0.000000\n  oldest_transform: 0.000000\n  buffer_length: 0.000\n")
 
+hsm@hsm-virtual-machine:~$ source ~/ros2/dev_ws/install/setup.bash
+
+
+hsm@hsm-virtual-machine:~/ros2/dev/src$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev/src$ ros2 launch sample_robo rsp.launch.py
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-02-23-01-03-161183-hsm-virtual-machine-9612
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [9613]
+[robot_state_publisher-1] [INFO] [1727890263.277027190] [robot_state_publisher]: got segment arm_link
+[robot_state_publisher-1] [INFO] [1727890263.277152997] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-1] [INFO] [1727890263.277165170] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-1] [INFO] [1727890263.277169849] [robot_state_publisher]: got segment camera_link_optical
+[robot_state_publisher-1] [INFO] [1727890263.277173987] [robot_state_publisher]: got segment slider_link
+[robot_state_publisher-1] [INFO] [1727890263.277177784] [robot_state_publisher]: got segment world
+
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ cd ../dev
+hsm@hsm-virtual-machine:~/ros2/dev$ rviz2 -d src/sample_robo/view_robot.rviz
+[INFO] [1727890331.846897094] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1727890331.847022010] [rviz2]: OpenGl version: 4.3 (GLSL 4.3)
+[INFO] [1727890331.880393738] [rviz2]: Stereo is NOT SUPPORTED
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 3867, resource id: 11665292, major code: 40 (TranslateCoords), minor code: 0
+
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev_ws$ cd ../dev
+hsm@hsm-virtual-machine:~/ros2/dev$ rviz2 -d src/sample_robo/view_robot.rviz
+[INFO] [1727890331.846897094] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1727890331.847022010] [rviz2]: OpenGl version: 4.3 (GLSL 4.3)
+[INFO] [1727890331.880393738] [rviz2]: Stereo is NOT SUPPORTED
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 3867, resource id: 11665292, major code: 40 (TranslateCoords), minor code: 0
+
+LOAD TO GAZEBO 
+
+hsm@hsm-virtual-machine:~/ros2$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2$ cd dev
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch gazebo_ros gazebo.launch.py
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-02-23-10-01-870678-hsm-virtual-machine-9970
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [9971]
+[INFO] [gzclient-2]: process started with pid [9973]
+[gzclient-2] context mismatch in svga_surface_destroy
+[gzclient-2] context mismatch in svga_surface_destroy
+[gzserver-1] [INFO] [1727890920.840165264] [camera_controller]: Publishing camera info to [/my_camera/camera_info]
+[gzserver-1] [INFO] [1727890920.841414954] [camera_controller]: Publishing depth camera info to [/my_camera/depth/camera_info]
+[gzserver-1] [INFO] [1727890920.842206979] [camera_controller]: Publishing pointcloud to [/my_camera/points]
+[gzserver-1] [ERROR] [1727890920.842259509] [camera_controller]: Unsupported Gazebo ImageFormat, using BGR8
+[gzserver-1] 
+[gzserver-1] [INFO] [1727890920.911751599] [gazebo_ros_joint_state_publisher]: Going to publish joint [slider_joint]
+[gzserver-1] [INFO] [1727890920.911873369] [gazebo_ros_joint_state_publisher]: Going to publish joint [arm_joint]
+
+
+SPAWN ENTITY - ROBOT 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity sample_robo
+[INFO] [1727890920.172159888] [spawn_entity]: Spawn Entity started
+[INFO] [1727890920.172716148] [spawn_entity]: Loading entity published on topic robot_description
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/qos.py:307: UserWarning: DurabilityPolicy.RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL is deprecated. Use DurabilityPolicy.TRANSIENT_LOCAL instead.
+  warnings.warn(
+[INFO] [1727890920.177053429] [spawn_entity]: Waiting for entity xml on robot_description
+[INFO] [1727890920.266424312] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[INFO] [1727890920.266972016] [spawn_entity]: Waiting for service /spawn_entity
+[INFO] [1727890920.286689780] [spawn_entity]: Calling service /spawn_entity
+[INFO] [1727890920.494945489] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [sample_robo]
+hsm@hsm-virtual-machine:~/ros2/dev$ 
+
+
+
+BOTH OF ABOVE SCRIPT COMBINED 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch sample_robo rsp_sim.launch.py
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-02-23-19-51-334934-hsm-virtual-machine-11768
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [11769]
+[INFO] [gzclient-2]: process started with pid [11771]
+[INFO] [robot_state_publisher-3]: process started with pid [11773]
+[INFO] [spawn_entity.py-4]: process started with pid [11775]
+[robot_state_publisher-3] [INFO] [1727891391.822989076] [robot_state_publisher]: got segment arm_link
+[robot_state_publisher-3] [INFO] [1727891391.823125975] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-3] [INFO] [1727891391.823134651] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-3] [INFO] [1727891391.823139299] [robot_state_publisher]: got segment camera_link_optical
+[robot_state_publisher-3] [INFO] [1727891391.823143557] [robot_state_publisher]: got segment slider_link
+[robot_state_publisher-3] [INFO] [1727891391.823147504] [robot_state_publisher]: got segment world
+[spawn_entity.py-4] [INFO] [1727891392.184334194] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-4] [INFO] [1727891392.184859911] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-4] /opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/qos.py:307: UserWarning: DurabilityPolicy.RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL is deprecated. Use DurabilityPolicy.TRANSIENT_LOCAL instead.
+[spawn_entity.py-4]   warnings.warn(
+[spawn_entity.py-4] [INFO] [1727891392.187277081] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-4] [INFO] [1727891392.199200663] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-4] [INFO] [1727891392.199671831] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-4] [INFO] [1727891393.707585099] [spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-4] [INFO] [1727891393.964407645] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [my_bot]
+[gzserver-1] [INFO] [1727891394.104305847] [camera_controller]: Publishing camera info to [/my_camera/camera_info]
+[gzserver-1] [INFO] [1727891394.105667927] [camera_controller]: Publishing depth camera info to [/my_camera/depth/camera_info]
+[gzserver-1] [INFO] [1727891394.106339280] [camera_controller]: Publishing pointcloud to [/my_camera/points]
+[gzserver-1] [ERROR] [1727891394.106393118] [camera_controller]: Unsupported Gazebo ImageFormat, using BGR8
+[gzserver-1] 
+[INFO] [spawn_entity.py-4]: process has finished cleanly [pid 11775]
+[gzserver-1] [INFO] [1727891394.175373567] [gazebo_ros_joint_state_publisher]: Going to publish joint [slider_joint]
+[gzserver-1] [INFO] [1727891394.175533078] [gazebo_ros_joint_state_publisher]: Going to publish joint [arm_joint]
+[gzclient-2] context mismatch in svga_surface_destroy

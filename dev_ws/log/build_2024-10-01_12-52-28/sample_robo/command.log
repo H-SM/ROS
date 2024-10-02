@@ -1,0 +1,4 @@
+Invoking command in '/home/hsm/ros2/dev_ws/build/sample_robo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev_ws/build/sample_robo -- -j6 -l6
+Invoked command in '/home/hsm/ros2/dev_ws/build/sample_robo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev_ws/build/sample_robo -- -j6 -l6
+Invoking command in '/home/hsm/ros2/dev_ws/build/sample_robo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev_ws/build/sample_robo
+Invoked command in '/home/hsm/ros2/dev_ws/build/sample_robo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev_ws/build/sample_robo
