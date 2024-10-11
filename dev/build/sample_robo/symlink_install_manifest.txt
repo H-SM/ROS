@@ -3,6 +3,7 @@
 /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_robot.urdf.xacro
 /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp.launch.py
 /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp_sim.launch.py
+/home/hsm/ros2/dev/install/sample_robo/share/sample_robo/worlds/my_world
 /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/package_run_dependencies/sample_robo
 /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/parent_prefix_path/sample_robo
 /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/ament_prefix_path.sh
