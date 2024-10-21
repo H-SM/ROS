@@ -1,0 +1,92 @@
+STARTING A ROBOT OVER GAZEBO (JUST PLACNG IT DOWN) 
+source ~/ros2/dev/install/setup.bash
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch my_bot rsp.launch.py use_sim_time:=true
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-21-12-20-36-139968-hsm-virtual-machine-5301
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [5302]
+[robot_state_publisher-1] [INFO] [1729493436.280287000] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-1] [INFO] [1729493436.280573359] [robot_state_publisher]: got segment caster_wheel
+[robot_state_publisher-1] [INFO] [1729493436.280585804] [robot_state_publisher]: got segment chassis
+[robot_state_publisher-1] [INFO] [1729493436.280590883] [robot_state_publisher]: got segment left_wheel
+[robot_state_publisher-1] [INFO] [1729493436.280595192] [robot_state_publisher]: got segment right_wheel
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 param get /robot_state_publisher use_sim_time
+Boolean value is: True
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch gazebo_ros gazebo.launch.py
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-21-12-21-27-403903-hsm-virtual-machine-5458
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [5459]
+[INFO] [gzclient-2]: process started with pid [5461]
+[gzclient-2] context mismatch in svga_surface_destroy
+[gzclient-2] context mismatch in svga_surface_destroy
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity bot_name
+[INFO] [1729493577.767996503] [spawn_entity]: Spawn Entity started
+[INFO] [1729493577.768861875] [spawn_entity]: Loading entity published on topic robot_description
+/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/qos.py:307: UserWarning: DurabilityPolicy.RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL is deprecated. Use DurabilityPolicy.TRANSIENT_LOCAL instead.
+  warnings.warn(
+[INFO] [1729493577.780926073] [spawn_entity]: Waiting for entity xml on robot_description
+[INFO] [1729493577.941860407] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[INFO] [1729493577.942445908] [spawn_entity]: Waiting for service /spawn_entity
+[INFO] [1729493580.230496858] [spawn_entity]: Calling service /spawn_entity
+[INFO] [1729493580.504547153] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [bot_name]
+
+(OR SIMPLY RUN THE LAUNCH SCRIPT THAT WE MADE) - aggregation of the above functions over gazebo 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch my_bot launch_sim.launch.py 
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-21-12-31-52-003614-hsm-virtual-machine-7138
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [7139]
+[INFO] [gzserver-2]: process started with pid [7141]
+[INFO] [gzclient-3]: process started with pid [7143]
+[INFO] [spawn_entity.py-4]: process started with pid [7145]
+[robot_state_publisher-1] [INFO] [1729494112.473604170] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-1] [INFO] [1729494112.473700972] [robot_state_publisher]: got segment caster_wheel
+[robot_state_publisher-1] [INFO] [1729494112.473708096] [robot_state_publisher]: got segment chassis
+[robot_state_publisher-1] [INFO] [1729494112.473712986] [robot_state_publisher]: got segment left_wheel
+[robot_state_publisher-1] [INFO] [1729494112.473716904] [robot_state_publisher]: got segment right_wheel
+[spawn_entity.py-4] [INFO] [1729494112.818123069] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-4] [INFO] [1729494112.818517611] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-4] /opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/qos.py:307: UserWarning: DurabilityPolicy.RMW_QOS_POLICY_DURABILITY_TRANSIENT_LOCAL is deprecated. Use DurabilityPolicy.TRANSIENT_LOCAL instead.
+[spawn_entity.py-4]   warnings.warn(
+[spawn_entity.py-4] [INFO] [1729494112.820875374] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-4] [INFO] [1729494112.833592938] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-4] [INFO] [1729494112.834183498] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-4] [INFO] [1729494113.841807037] [spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-4] [INFO] [1729494113.989042396] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [my_bot]
+[INFO] [spawn_entity.py-4]: process has finished cleanly [pid 7145]
+[gzclient-3] context mismatch in svga_surface_destroy
+[gzclient-3] context mismatch in svga_surface_destroy
+
+SEND VELOCITY FROM KEYBOARD 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+
+This node takes keypresses from the keyboard and publishes them
+as Twist/TwistStamped messages. It works best with a US keyboard layout.
+---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+
+For Holonomic mode (strafing), hold down the shift key:
+---------------------------
+   U    I    O
+   J    K    L
+   M    <    >
+
+t : up (+z)
+b : down (-z)
+
+anything else : stop
+
+q/z : increase/decrease max speeds by 10%
+w/x : increase/decrease only linear speed by 10%
+e/c : increase/decrease only angular speed by 10%
+
+CTRL-C to quit
+
+currently:	speed 0.5	turn 1.0 
+

@@ -1,0 +1,23 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_gazebo.xacro
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_include.xacro
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_robot.urdf.xacro
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp.launch.py
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp_sim.launch.py
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/worlds/my_world
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/package_run_dependencies/sample_robo
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/parent_prefix_path/sample_robo
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/path.sh
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/path.dsv
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.bash
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.sh
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.zsh
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.dsv
+-- Symlinking: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/package.dsv
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/packages/sample_robo
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/cmake/sample_roboConfig.cmake
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/cmake/sample_roboConfig-version.cmake
+-- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/package.xml
