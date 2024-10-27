@@ -1,4 +1,5 @@
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/config/empty.yaml
+/home/hsm/ros2/dev/install/my_bot/share/my_bot/config/joystick.yaml
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/config/view_bot.rviz
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/description/camera.xacro
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/description/gazebo_control.xacro
@@ -7,6 +8,7 @@
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/description/robot.urdf.xacro
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/description/robot_core.xacro
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/launch/camera.launch.py
+/home/hsm/ros2/dev/install/my_bot/share/my_bot/launch/joystick.launch.py
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/launch/launch_sim.launch.py
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/launch/rplidar.launch.py
 /home/hsm/ros2/dev/install/my_bot/share/my_bot/launch/rsp.launch.py

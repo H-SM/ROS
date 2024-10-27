@@ -1,0 +1,27 @@
+[0.278s] Invoking command in '/home/hsm/ros2/dev/build/sample_robo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hsm/ros2/dev/install/joy_tester:/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev/build/sample_robo -- -j6 -l6
+[0.345s] Invoked command in '/home/hsm/ros2/dev/build/sample_robo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hsm/ros2/dev/install/joy_tester:/opt/ros/humble /usr/bin/cmake --build /home/hsm/ros2/dev/build/sample_robo -- -j6 -l6
+[0.420s] Invoking command in '/home/hsm/ros2/dev/build/sample_robo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hsm/ros2/dev/install/joy_tester:/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev/build/sample_robo
+[0.432s] -- Install configuration: ""
+[0.433s] -- Execute custom install script
+[0.433s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_gazebo.xacro
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_include.xacro
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/description/example_robot.urdf.xacro
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp.launch.py
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/launch/rsp_sim.launch.py
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/worlds/my_world
+[0.434s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/package_run_dependencies/sample_robo
+[0.435s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/parent_prefix_path/sample_robo
+[0.435s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/ament_prefix_path.sh
+[0.436s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/ament_prefix_path.dsv
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/path.sh
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/environment/path.dsv
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.bash
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.sh
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.zsh
+[0.437s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/local_setup.dsv
+[0.438s] -- Symlinking: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/package.dsv
+[0.451s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/ament_index/resource_index/packages/sample_robo
+[0.452s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/cmake/sample_roboConfig.cmake
+[0.453s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/cmake/sample_roboConfig-version.cmake
+[0.453s] -- Up-to-date symlink: /home/hsm/ros2/dev/install/sample_robo/share/sample_robo/package.xml
+[0.455s] Invoked command in '/home/hsm/ros2/dev/build/sample_robo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/hsm/ros2/dev/install/joy_tester:/opt/ros/humble /usr/bin/cmake --install /home/hsm/ros2/dev/build/sample_robo

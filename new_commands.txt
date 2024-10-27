@@ -151,3 +151,138 @@ Details:
     
 hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run image_transport republish compressed raw --ros-args -r in/compressed:=/camera/image_raw/compressed -r out:=/camera/image_raw/uncompressed
 
+-- JOYSTICK -- 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run joy 
+usage: ros2 run [-h] [--prefix PREFIX] package_name executable_name ...
+ros2 run: error: the following arguments are required: executable_name, argv
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run joy 
+usage: ros2 run [-h] [--prefix PREFIX] package_name executable_name ...
+ros2 run: error: the following arguments are required: executable_name, argv
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run joy joy_enumerate_devices 
+ID : GUID                             : GamePad : Mapped : Joystick Device Name
+-------------------------------------------------------------------------------
+ 0 : 030000005e0400008e02000010010000 :    true :   true : X360 Controller
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run joy joy_enumerate_devices 
+ID : GUID                             : GamePad : Mapped : Joystick Device Name
+-------------------------------------------------------------------------------
+ 0 : 030000005e0400008e02000010010000 :    true :   true : X360 Controller
+hsm@hsm-virtual-machine:~/ros2/dev$ 
+
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run joy joy_node 
+[INFO] [1730042138.393152049] [joy_node]: Opened joystick: Xbox 360 Controller.  deadzone: 0.050000
+
+-- look whats up 
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 topic echo /joy
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 param list
+/camera_controller:
+  camera.image_raw.enable_pub_plugins
+  camera.image_raw.format
+  camera.image_raw.jpeg_quality
+  camera.image_raw.png_level
+  camera.image_raw.tiff.res_unit
+  camera.image_raw.tiff.xdpi
+  camera.image_raw.tiff.ydpi
+  qos_overrides./clock.subscription.depth
+  qos_overrides./clock.subscription.durability
+  qos_overrides./clock.subscription.history
+  qos_overrides./clock.subscription.reliability
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  update_rate
+  use_sim_time
+/diff_drive:
+  qos_overrides./clock.subscription.depth
+  qos_overrides./clock.subscription.durability
+  qos_overrides./clock.subscription.history
+  qos_overrides./clock.subscription.reliability
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  qos_overrides./tf.publisher.depth
+  qos_overrides./tf.publisher.durability
+  qos_overrides./tf.publisher.history
+  qos_overrides./tf.publisher.reliability
+  use_sim_time
+/gazebo:
+  enable_performance_metrics
+  publish_rate
+  qos_overrides./clock.subscription.depth
+  qos_overrides./clock.subscription.durability
+  qos_overrides./clock.subscription.history
+  qos_overrides./clock.subscription.reliability
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  use_sim_time
+/image_republisher:
+  in.mode
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  use_sim_time
+/joy_node:
+  autorepeat_rate
+  coalesce_interval_ms
+  deadzone
+  device_id
+  device_name
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  sticky_buttons
+  use_sim_time
+/laser_controller:
+  qos_overrides./clock.subscription.depth
+  qos_overrides./clock.subscription.durability
+  qos_overrides./clock.subscription.history
+  qos_overrides./clock.subscription.reliability
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  use_sim_time
+/robot_state_publisher:
+  frame_prefix
+  ignore_timestamp
+  publish_frequency
+  qos_overrides./clock.subscription.depth
+  qos_overrides./clock.subscription.durability
+  qos_overrides./clock.subscription.history
+  qos_overrides./clock.subscription.reliability
+  qos_overrides./joint_states.subscription.depth
+  qos_overrides./joint_states.subscription.history
+  qos_overrides./joint_states.subscription.reliability
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  qos_overrides./tf.publisher.depth
+  qos_overrides./tf.publisher.durability
+  qos_overrides./tf.publisher.history
+  qos_overrides./tf.publisher.reliability
+  qos_overrides./tf_static.publisher.depth
+  qos_overrides./tf_static.publisher.history
+  qos_overrides./tf_static.publisher.reliability
+  robot_description
+  use_sim_time
+/rqt_gui_cpp_node_13517:
+  camera.image_raw.mode
+  qos_overrides./parameter_events.publisher.depth
+  qos_overrides./parameter_events.publisher.durability
+  qos_overrides./parameter_events.publisher.history
+  qos_overrides./parameter_events.publisher.reliability
+  use_sim_time
+/teleop_twist_keyboard:
+  frame_id
+  stamped
+  use_sim_time
