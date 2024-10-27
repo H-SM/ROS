@@ -90,3 +90,64 @@ CTRL-C to quit
 
 currently:	speed 0.5	turn 1.0 
 
+hsm@hsm-virtual-machine:~/ros2/dev$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 launch my_bot launch_sim.launch.py world:=./src/my_bot/worlds/worldy_world.world 
+[INFO] [launch]: All log files can be found below /home/hsm/.ros/log/2024-10-27-19-49-32-035485-hsm-virtual-machine-5413
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [5414]
+[INFO] [gzserver-2]: process started with pid [5416]
+[INFO] [gzclient-3]: process started with pid [5418]
+[INFO] [spawn_entity.py-4]: process started with pid [5420]
+
+hsm@hsm-virtual-machine:~/ros2/dev$ sudo apt install ros-humble-image-transport-plugins
+hsm@hsm-virtual-machine:~/ros2/dev$ sudo apt install ros-humble-rqt-image-view
+
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run rqt_image_view rqt_image_view 
+
+hsm@hsm-virtual-machine:~/ros2/dev$ source ~/ros2/dev/install/setup.bash
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run image_transport list_transports 
+Declared transports:
+image_transport/compressed
+image_transport/compressedDepth
+image_transport/raw
+image_transport/theora
+
+Details:
+----------
+"image_transport/compressed"
+ - Provided by package: compressed_image_transport
+ - Publisher: 
+      This plugin publishes a CompressedImage using either JPEG or PNG compression.
+    
+ - Subscriber: 
+      This plugin decompresses a CompressedImage topic.
+    
+----------
+"image_transport/compressedDepth"
+ - Provided by package: compressed_depth_image_transport
+ - Publisher: 
+      This plugin publishes a compressed depth images using PNG compression.
+    
+ - Subscriber: 
+      This plugin decodes a compressed depth images.
+    
+----------
+"image_transport/raw"
+ - Provided by package: image_transport
+ - Publisher: 
+      This is the default publisher. It publishes the Image as-is on the base topic.
+    
+ - Subscriber: 
+      This is the default pass-through subscriber for topics of type sensor_msgs/Image.
+    
+----------
+"image_transport/theora"
+ - Provided by package: theora_image_transport
+ - Publisher: 
+      This plugin publishes a video packet stream encoded using Theora.
+    
+ - Subscriber: 
+      This plugin decodes a video packet stream encoded using Theora.
+    
+hsm@hsm-virtual-machine:~/ros2/dev$ ros2 run image_transport republish compressed raw --ros-args -r in/compressed:=/camera/image_raw/compressed -r out:=/camera/image_raw/uncompressed
+
